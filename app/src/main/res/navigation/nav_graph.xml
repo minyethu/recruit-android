@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/transactionListFragment"
+    android:id="@+id/nav_graph" >
+    <fragment
+        android:id="@+id/transactionListFragment"
+        android:name="nz.co.test.transactions.transactionList.TransactionListFragment"
+        tools:layout="@layout/fragment_transaction_list"
+        android:label="TransactionListFragment" />
+    <fragment
+        android:id="@+id/transactionDetailsFragment"
+        android:name="nz.co.test.transactions.transactionDetails.TransactionDetailsFragment"
+        tools:layout="@layout/fragment_transaction_details"
+        android:label="TransactionDetailsFragment" />
+</navigation>
