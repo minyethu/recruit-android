@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Transactions</string>
+    <string name="transaction_date">Transaction Date:</string>
+    <string name="date_placeholder">2022–06–06</string>
+    <string name="summary">Summary:</string>
+    <string name="summary_placeholder">Lorem ipsum</string>
 </resources>

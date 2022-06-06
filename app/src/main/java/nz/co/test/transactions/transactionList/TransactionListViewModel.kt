@@ -13,13 +13,8 @@ class TransactionListViewModel: ViewModel() {
 
     val transactions: LiveData<Array<Transaction>> = _transactions
 
-
-    val _transactions2 = MutableLiveData<String>()
-    val transactions2 : LiveData<String> = _transactions2
-
-
     init {
-        _transactions2.value = "Here"
+        _transactions.value = emptyArray()
         retrieveTransactionFromAPI()
     }
 
@@ -28,10 +23,8 @@ class TransactionListViewModel: ViewModel() {
             try {
                val result = TransactionsApi.retrofitService.retrieveTransactions()
                 _transactions.value = result
-                println("Success");
             } catch (e: Exception) {
                 println(e.message);
-                println("failed");
             }
         }
     }
