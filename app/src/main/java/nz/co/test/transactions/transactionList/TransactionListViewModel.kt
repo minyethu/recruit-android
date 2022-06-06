@@ -15,16 +15,16 @@ class TransactionListViewModel: ViewModel() {
 
     init {
         _transactions.value = emptyArray()
-        retrieveTransactionFromAPI()
+        retrieveTransactionsFromAPI()
     }
 
-    fun retrieveTransactionFromAPI() {
+    fun retrieveTransactionsFromAPI() {
         viewModelScope.launch {
             try {
                val result = TransactionsApi.retrofitService.retrieveTransactions()
                 _transactions.value = result
             } catch (e: Exception) {
-                println(e.message);
+                println(e.message)
             }
         }
     }
