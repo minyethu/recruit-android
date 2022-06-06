@@ -8,10 +8,30 @@
         android:id="@+id/transactionListFragment"
         android:name="nz.co.test.transactions.transactionList.TransactionListFragment"
         tools:layout="@layout/fragment_transaction_list"
-        android:label="TransactionListFragment" />
+        android:label="TransactionListFragment" >
+        <action
+            android:id="@+id/action_transactionListFragment_to_transactionDetailsFragment"
+            app:destination="@id/transactionDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/transactionDetailsFragment"
         android:name="nz.co.test.transactions.transactionDetails.TransactionDetailsFragment"
         tools:layout="@layout/fragment_transaction_details"
-        android:label="TransactionDetailsFragment" />
+        android:label="TransactionDetailsFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="transactionDate"
+            app:argType="string" />
+        <argument
+            android:name="summary"
+            app:argType="string" />
+        <argument
+            android:name="debit"
+            app:argType="java.math.BigDecimal" />
+        <argument
+            android:name="credit"
+            app:argType="java.math.BigDecimal" />
+    </fragment>
 </navigation>

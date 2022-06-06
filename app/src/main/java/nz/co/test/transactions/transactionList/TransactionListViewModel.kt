@@ -8,6 +8,8 @@ import kotlinx.coroutines.launch
 import nz.co.test.transactions.services.Transaction
 import nz.co.test.transactions.services.TransactionsApi
 
+
+
 class TransactionListViewModel: ViewModel() {
     private val _transactions = MutableLiveData<Array<Transaction>>()
 
@@ -22,6 +24,12 @@ class TransactionListViewModel: ViewModel() {
         viewModelScope.launch {
             try {
                val result = TransactionsApi.retrofitService.retrieveTransactions()
+
+                //Sort the transactions by date
+                result.sortByDescending {
+                    it.transactionDate
+                }
+
                 _transactions.value = result
             } catch (e: Exception) {
                 println(e.message)

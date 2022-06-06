@@ -4,4 +4,9 @@
     <string name="date_placeholder">2022–06–06</string>
     <string name="summary">Summary:</string>
     <string name="summary_placeholder">Lorem ipsum</string>
+    <string name="credit">Credit</string>
+    <string name="debit">Debit</string>
+    <string name="_100">100</string>
+    <string name="_200">200</string>
+    <string name="time">Time:</string>
 </resources>
